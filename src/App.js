@@ -1,11 +1,13 @@
-import Authenticated from './Contexts/Authenticated';
-
-import './App.css';
+import { BrowserRouter as Swich, Route } from "react-router-dom";
+import LoginComponent from "./components/Login/LoginComponent";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      
+      <Swich>
+        <Route path="/login" exact component={LoginComponent} />
+      </Swich>
     </div>
   );
 }
