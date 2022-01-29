@@ -25,7 +25,7 @@ const LoginComponent = () => {
        </div>
        
         <button type="submit" form="LoginForm" className="loginBtn">
-        <p>log in</p>
+        <p className="logButnParagraph">log in</p>
         </button>
         <div className="redirectDiv">
         <p className="linkToRegister">You dont have an account?</p>
