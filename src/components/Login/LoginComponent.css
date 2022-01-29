@@ -14,7 +14,49 @@
   position: absolute;
   top: 40px;
 }
+.redirectDiv {
+  position: absolute;
+  display: block;
+  top: 791px;
+  left: 253px;
+  width: 345px;
+  height: 19px;
+  text-align: center;
+  letter-spacing: 0px;
+ word-spacing: 0px;
+  opacity: 1;
 
+}
+.linkToRegister {
+  margin: 0;
+  display: inline-block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 225px;
+  height: 19px;
+
+  text-align: right;
+  font: normal normal normal 16px/22px Montserrat;
+  letter-spacing: 0px;
+  color: #0d242e;
+}
+.regLink {
+  display: inline-block;
+  position: absolute;
+  top: 0px;
+  left: 225px;
+  width: 120px;
+  height: 19px;
+
+  text-align: left;
+  text-decoration: underline;
+  font: normal normal bold 16px/22px Montserrat;
+  letter-spacing: 0px;
+
+  color: #1076b5;
+  text-transform: uppercase;
+}
 .visible {
   position: absolute;
   margin-top: 3px;
@@ -54,12 +96,12 @@
   display: block;
 }
 .revealPassword {
-  position: relative;
+  position: absolute;
   top: 613px;
   left: 566px;
   width: 109px;
   height: 15px;
-  text-align: left;
+  text-align: right;
   text-decoration: underline;
   font: normal normal normal 12px/16px Montserrat;
   letter-spacing: 0px;
@@ -68,8 +110,8 @@
   border: none;
   background-color: none;
 }
-.revealPassword:hover{
-    color: grey;
+.revealPassword:hover {
+  color: grey;
 }
 .icon {
   display: inline-block;
@@ -107,15 +149,16 @@
 .headWellcome {
   position: absolute;
   top: 300px;
-  left: 333px;
-  width: 184px;
-  height: 24px;
-  text-align: center;
-  font: normal normal bold 20px/30px Montserrat;
-  letter-spacing: 0px;
-  color: #0d242e;
-  text-transform: uppercase;
-  opacity: 100%;
+left: 333px;
+width: 184px;
+height: 24px;
+text-align: center;
+font-family: 'Montserrat';
+font: normal normal bold 20px/30px;
+letter-spacing: 0px;
+color: #0D242E;
+text-transform: uppercase;
+opacity: 1;
 }
 .loginImageDiv {
   display: inline-block;

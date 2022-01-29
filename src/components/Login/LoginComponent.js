@@ -1,11 +1,12 @@
 import "./LoginComponent.css";
 import {MdOutlineVisibility } from 'react-icons/md';
+import { Link } from "react-router-dom";
 const LoginComponent = () => {
   return (
     <div className="loginDiv">
       <form id="LoginForm">
         <div className="logoImgDiv"></div>
-        <h3 className="headWellcome">Wellcome Back!</h3>
+        <h3 className="headWellcome">Welcome Back!</h3>
         <label className="labelEmail" htmlFor="email">
           Email
         </label>
@@ -26,7 +27,10 @@ const LoginComponent = () => {
         <button type="submit" form="LoginForm" className="loginBtn">
         <p>log in</p>
         </button>
-        
+        <div className="redirectDiv">
+        <p className="linkToRegister">You dont have an account?</p>
+        <Link className="regLink" to="/register">Sign up here</Link>
+        </div>
       </form>
       <div className="loginImageDiv" />
     
