@@ -4,7 +4,7 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="App">
+    <div id="root">
       <Swich>
         <Route path="/login" exact component={LoginComponent} />
       </Swich>
