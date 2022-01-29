@@ -13,7 +13,7 @@
     position: absolute;
     display: inline-block;
    
-    top: 40px;
+  
   }
   .redirectDiv {
     position: absolute;
@@ -131,7 +131,9 @@ background: transparent url("/src/components/Register/static/Exclusion\ 1.png")
     position: relative;
     margin:0;
     padding:0;
-    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
     top: 300px;
 left: 200px;
 width: 450px;
@@ -139,8 +141,8 @@ height: 24px;
 text-align: center;
 font-family: Montserrat;
 font-weight: bold;
-font-size: 20px;
-letter-spacing: 0px;
+font-size: 18px;
+letter-spacing: 0;
 color: #0D242E;
 
 text-transform: uppercase;
@@ -155,7 +157,7 @@ height: 22px;
 text-align: center;
 font-family:  Montserrat;
 font-weight: bold;
-font-size: 16px;
+font-size: 15px;
 
 letter-spacing: 0px;
 color: #0D242E;

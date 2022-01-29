@@ -9,10 +9,10 @@
   box-shadow: 0px 5px 15px #00347026;
   opacity: 1;
 }
-#loginForm {
+#LoginForm {
   display: inline-block;
   position: absolute;
-  top: 40px;
+
 }
 .redirectDiv {
   position: absolute;
