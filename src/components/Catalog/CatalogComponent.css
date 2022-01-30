@@ -53,3 +53,27 @@
   opacity: 0.5;
   margin-left: -1.4%;
 }
+#books{
+
+  display: block;
+  margin:10px;
+}
+
+/*book*/
+
+.bookContainer{
+width: 870px;
+height: 177px;
+background-color: khaki;
+display: inline-block;
+margin: 4px;
+}
+.imageSection{
+  display: inline-block;
+  height: 177px;
+}
+.bookInfoSection{
+  display: inline;
+  height: 177px;
+}
+
