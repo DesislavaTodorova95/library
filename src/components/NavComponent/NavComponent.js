@@ -8,7 +8,7 @@ const NavComponent = () => {
       <nav className="navList">
         <ul className="uLNav">
           <li>
-            <Link to="/cataog" className="liItemLib">
+            <Link to="/catalog" className="liItemLib">
               Library
             </Link>
           </li>
