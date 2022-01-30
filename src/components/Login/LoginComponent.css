@@ -12,7 +12,6 @@
 #LoginForm {
   display: inline-block;
   position: absolute;
-
 }
 .redirectDiv {
   position: absolute;
@@ -23,9 +22,8 @@
   height: 19px;
   text-align: center;
   letter-spacing: 0px;
- word-spacing: 0px;
+  word-spacing: 0px;
   opacity: 1;
-
 }
 .linkToRegister {
   margin: 0;
@@ -35,7 +33,6 @@
   left: 0px;
   width: 225px;
   height: 19px;
-
   text-align: right;
   font: normal normal normal 16px/22px Montserrat;
   letter-spacing: 0px;
@@ -48,12 +45,10 @@
   left: 225px;
   width: 120px;
   height: 19px;
-
   text-align: left;
   text-decoration: underline;
   font: normal normal bold 16px/22px Montserrat;
   letter-spacing: 0px;
-
   color: #1076b5;
   text-transform: uppercase;
 }
@@ -141,7 +136,6 @@
   left: 236px;
   width: 378px;
   height: 82px;
-
   background: transparent url("/src/components/Login/static/Exclusion\ 1.png")
     0% 0% no-repeat padding-box;
   opacity: 1;
@@ -149,16 +143,16 @@
 .headWellcome {
   position: absolute;
   top: 300px;
-left: 333px;
-width: 184px;
-height: 24px;
-text-align: center;
-font-family: 'Montserrat';
-font: normal normal bold 20px/30px;
-letter-spacing: 0px;
-color: #0D242E;
-text-transform: uppercase;
-opacity: 1;
+  left: 333px;
+  width: 184px;
+  height: 24px;
+  text-align: center;
+  font-family: "Montserrat";
+  font: normal normal bold 20px/30px;
+  letter-spacing: 0px;
+  color: #0d242e;
+  text-transform: uppercase;
+  opacity: 1;
 }
 .loginImageDiv {
   display: inline-block;
@@ -182,19 +176,18 @@ opacity: 1;
   border-radius: 5px;
   opacity: 1;
 }
-.logButnParagraph{
+.logButnParagraph {
   display: inline-block;
-  
- padding:0;
- margin:0;
+  padding: 0;
+  margin: 0;
   width: 58px;
   height: 19px;
   text-align: left;
-font: normal normal bold 16px/22px Montserrat;
-letter-spacing: 0px;
-color: #FFFFFF;
-text-transform: uppercase;
-opacity: 1;
+  font: normal normal bold 16px/22px Montserrat;
+  letter-spacing: 0px;
+  color: #ffffff;
+  text-transform: uppercase;
+  opacity: 1;
 }
 
 .labelLogin {

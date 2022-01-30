@@ -6,12 +6,24 @@ const NavComponent = () => {
     <div id="nav-container">
       <img className="logoImage" src={logo} alt="logo" />
       <nav className="navList">
-        <ul className="uLNav" >
-          <li><Link to="/cataog" className="liItemLib">Library</Link></li>
-          <li><Link to="/settings"  className="liItemSettings">settings</Link></li>
-          <li><Link to="/logout" className="liItemLogout">logout</Link></li>
+        <ul className="uLNav">
+          <li>
+            <Link to="/cataog" className="liItemLib">
+              Library
+            </Link>
+          </li>
+          <li>
+            <Link to="/settings" className="liItemSettings">
+              settings
+            </Link>
+          </li>
+          <li>
+            <Link to="/logout" className="liItemLogout">
+              logout
+            </Link>
+          </li>
         </ul>
-        </nav>
+      </nav>
     </div>
   );
 };

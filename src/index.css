@@ -1,39 +1,36 @@
 @import url("https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;1,100&display=swap");
 @font-face {
-  font-family: 'Montserrat-Regular';
-  src: url('/src/fonts/Montserrat-Black.ttf'),
-  url('/src/fonts/Montserrat-BlackItalic.ttf'),
-  url('/src/fonts/Montserrat-Bold.ttf'),
-  url('/src/fonts/Montserrat-ExtraBoldItalic.ttf'),
-  url('./fonts/Montserrat-Italic.ttf'),
-  url('/src/fonts/Montserrat-ExtraLight.ttf'),
-  url('/src/fonts/Montserrat-ExtraLightItalic.ttf'),
-  url('/src/fonts/Montserrat-Italic.ttf'),
-  url('/src/fonts/Montserrat-Light.ttf'),
-  url('/src/fonts/Montserrat-LightItalic.ttf'),
-  url('/src/fonts/Montserrat-Medium.ttf'),
-  url('/src/fonts/Montserrat-MediumItalic.ttf'),
-  url('/src/fonts/Montserrat-Regular.ttf'),
-  url('/src/fonts/Montserrat-SemiBold.ttf'),
-  url('/src/fonts/Montserrat-SemiBoldItalic.ttf'),
-  url('/src/fonts/Montserrat-Thin.ttf'),
-  url('/src/fonts/Montserrat-ThinItalic.ttf'),
-  
+  font-family: "Montserrat-Regular";
+  src: url("/src/fonts/Montserrat-Black.ttf"),
+    url("/src/fonts/Montserrat-BlackItalic.ttf"),
+    url("/src/fonts/Montserrat-Bold.ttf"),
+    url("/src/fonts/Montserrat-ExtraBoldItalic.ttf"),
+    url("./fonts/Montserrat-Italic.ttf"),
+    url("/src/fonts/Montserrat-ExtraLight.ttf"),
+    url("/src/fonts/Montserrat-ExtraLightItalic.ttf"),
+    url("/src/fonts/Montserrat-Italic.ttf"),
+    url("/src/fonts/Montserrat-Light.ttf"),
+    url("/src/fonts/Montserrat-LightItalic.ttf"),
+    url("/src/fonts/Montserrat-Medium.ttf"),
+    url("/src/fonts/Montserrat-MediumItalic.ttf"),
+    url("/src/fonts/Montserrat-Regular.ttf"),
+    url("/src/fonts/Montserrat-SemiBold.ttf"),
+    url("/src/fonts/Montserrat-SemiBoldItalic.ttf"),
+    url("/src/fonts/Montserrat-Thin.ttf"),
+    url("/src/fonts/Montserrat-ThinItalic.ttf");
 }
 body {
   display: block;
-  font-family: 'Montserrat-Regular';
+  font-family: "Montserrat-Regular";
   position: relative;
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 0px 5px 15px #00347026;
   opacity: 1;
- 
-    top: 0px;
-    left: 0px;
-    width: 1920px;
-    height: 1080px;
-  
-  @media (max-width: 450px) {
+top: 0px;
+  left: 0px;
+  width: 1920px;
+  height: 1080px;
+ @media (max-width: 450px) {
     top: 0px;
     left: 0px;
     width: 414px;

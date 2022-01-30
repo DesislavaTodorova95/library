@@ -1,8 +1,5 @@
-
 import { Link } from "react-router-dom";
 import "./RegisterComponent.css";
-
-
 
 const RegisterCoponent = () => {
   return (
@@ -34,8 +31,10 @@ const RegisterCoponent = () => {
           <p className="regButnParagraph">Sign Up</p>
         </button>
         <div className="redirectToLoginDiv">
-        <p className="linkToRegister">You dont have an account?</p>
-        <Link className="regLink" to="/login">Log in here</Link>
+          <p className="linkToRegister">You dont have an account?</p>
+          <Link className="regLink" to="/login">
+            Log in here
+          </Link>
         </div>
       </form>
 

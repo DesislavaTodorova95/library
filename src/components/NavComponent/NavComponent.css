@@ -1,58 +1,50 @@
-
-#nav-container{
-    
-   position: absolute;
-    top: 0px;
-left: 0px;
-width: 1920px;
-height: 63px;
-background: #FFFFFF 0% 0% no-repeat padding-box;
-box-shadow: 0px 3px 6px #00000029;
-opacity: 1;
+#nav-container {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 1920px;
+  height: 63px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  opacity: 1;
 }
-.logoImage{
-    position: absolute;
-    top: 17px;
-left: 50px;
-width: 136px;
-height: 30px;
-
-opacity: 1;
+.logoImage {
+  position: absolute;
+  top: 17px;
+  left: 50px;
+  width: 136px;
+  height: 30px;
+  opacity: 1;
 }
-.navList{
-
-position: absolute;
-    /* align-items: center; */
-    /* display: block; */
-top: 22px;
-left: 841px;
-width: 239px;
-height: 41px;
+.navList {
+  position: absolute;
+  top: 22px;
+  left: 841px;
+  width: 239px;
+  height: 41px;
 }
-.uLNav{margin:0;
-padding: 0;
-list-style-type: none;}
-.uLNav li{
-    font-family: 'Montserrat';
-    font-weight: normal;
-    font-size: 16px;
-    text-transform: uppercase;
-    letter-spacing: 0;
-    text-decoration: none;
-    display: inline;
-    margin: 10px;
-    padding: 4px;
+.uLNav {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
-.uLNav li a{
-    text-decoration: none;
-    text-align: left;
-font: normal normal normal 16px/22px Montserrat;
-letter-spacing: 0px;
-color: #0D242E;
-text-transform: uppercase;
-opacity: 1;
+.uLNav li {
+  font-family: "Montserrat";
+  font-weight: normal;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  text-decoration: none;
+  display: inline;
+  margin: 10px;
+  padding: 4px;
 }
-
-
-
-
+.uLNav li a {
+  text-decoration: none;
+  text-align: left;
+  font: normal normal normal 16px/22px Montserrat;
+  letter-spacing: 0px;
+  color: #0d242e;
+  text-transform: uppercase;
+  opacity: 1;
+}

@@ -17,23 +17,29 @@ const LoginComponent = () => {
           Password
         </label>
         <div className="passwordInput">
-          <input className="inp inpPass" type="password" name="password"/>
-          <p className="revealPassword" onClick={(e)=>{e.preventDefault();
-        console.log('hhohoh')
-         
-        }}>Recover Password</p>
-       </div>
-       
+          <input className="inp inpPass" type="password" name="password" />
+          <p
+            className="revealPassword"
+            onClick={(e) => {
+              e.preventDefault();
+              console.log("hhohoh");
+            }}
+          >
+            Recover Password
+          </p>
+        </div>
+
         <button type="submit" form="LoginForm" className="loginBtn">
-        <p className="logButnParagraph">log in</p>
+          <p className="logButnParagraph">log in</p>
         </button>
         <div className="redirectDiv">
-        <p className="linkToRegister">You dont have an account?</p>
-        <Link className="regLink" to="/register">Sign up here</Link>
+          <p className="linkToRegister">You dont have an account?</p>
+          <Link className="regLink" to="/register">
+            Sign up here
+          </Link>
         </div>
       </form>
       <div className="loginImageDiv" />
-    
     </div>
   );
 };
