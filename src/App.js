@@ -4,7 +4,7 @@ import "./App.css";
 import RegisterCoponent from "./components/Register/RegisterComponent";
 import CatalogComponent from "./components/Catalog/CatalogComponent";
 import SettingsComponent from "./components/SettingsComponent/SettingsComponent";
-
+import DetailsComponent from "./components/Details/DetailsComponent";
 function App() {
   return (
     <div id="root">
@@ -13,6 +13,7 @@ function App() {
         <Route path="/register" exact component={RegisterCoponent} />
         <Route path="/catalog" exact component={CatalogComponent} />
         <Route path="/settings" exact component={SettingsComponent}/>
+        <Route path="/details/:id" exact component={DetailsComponent} />
       </Swich>
     </div>
   );
