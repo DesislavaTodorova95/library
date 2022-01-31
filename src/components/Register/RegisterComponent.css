@@ -196,3 +196,8 @@
   width: 288px;
   height: 19px;
 }
+@media only screen and (max-width: 500px) {
+  #registerDiv{
+    background-color: aqua;
+  }
+}

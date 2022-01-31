@@ -48,3 +48,8 @@
   text-transform: uppercase;
   opacity: 1;
 }
+@media only screen and (max-width: 500px) {
+  #nav-container{
+    background-color: aqua;
+  }
+}

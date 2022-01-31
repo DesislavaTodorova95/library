@@ -205,3 +205,8 @@
 #viewButton {
   background-image: url("./static/view.png");
 }
+@media only screen and (max-width: 500px) {
+  #loginDiv{
+    background-color: aqua;
+  }
+}
