@@ -34,7 +34,9 @@ const CatalogComponent = () => {
                 </div>
               </div>
               <div className="btnDetailsDiv">
-               <Link className="detailsLink" to="/details/:id"><button className="detailsBtn"></button></Link> 
+                <Link className="detailsLink" to="/details/:id">
+                  <button className="detailsBtn"></button>
+                </Link>
               </div>
             </div>
 
@@ -49,10 +51,12 @@ const CatalogComponent = () => {
                 <div className="AddedUpdatedInfo">
                   <h5 className="info created">created on: </h5>
                   <h5 className="info updated">updated on: </h5>
-             
-
-              </div>   </div> <div className="btnDetailsDiv">
-              <Link className="detailsLink" to="/details/:id"><button className="detailsBtn"></button></Link> 
+                </div>
+              </div>
+              <div className="btnDetailsDiv">
+                <Link className="detailsLink" to="/details/:id">
+                  <button className="detailsBtn"></button>
+                </Link>
               </div>
             </div>
           </div>
