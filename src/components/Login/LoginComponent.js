@@ -1,23 +1,55 @@
 import "./LoginComponent.css";
 
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { useContext } from "react/cjs/react.development";
+import UserContext from "../../Contexts/UserContext";
+import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 const LoginComponent = () => {
+  const [username, setUsername]= useState("");
+  const [password, setPassword]= useState("");
+  const {token, setUserToken}= useContext(UserContext);
+  
+useEffect(()=>{console.log(token)}, [token])
+
+  const loginSubmit= async (e)=>{
+e.preventDefault();
+try{
+  const config = {
+    headers: {
+      "Content-Type": "application/json"
+    }
+  }
+
+ const tokenResponse= await axios.post('https://books-library-dev.herokuapp.com/api/user/login', {username, password}, config).catch((error)=>{console.log(error)}) 
+ sessionStorage.setItem("session-token", tokenResponse.data.token);
+ setUserToken(sessionStorage.getItem("session-token").toString());
+
+
+
+}catch(error){console.log(error)};
+  };
+  if(token){return <Redirect to='/catalog'/>}
   return (
     <div className="loginDiv">
-      <form id="LoginForm">
+      <form id="LoginForm" onSubmit={loginSubmit}>
         <div className="logoImgDiv"></div>
         <h3 className="headWellcome">Welcome Back!</h3>
         <label className="labelEmail" htmlFor="email">
           Email
         </label>
         <div className="emailInput">
-          <input className="inp inpEmail" type="text" name="email"></input>
+          <input className="inp inpEmail" type="text" name="email" onChange={(e)=>{
+   setUsername(e.target.value);
+
+          }} value={username}></input>
         </div>
         <label className="labelPassword" htmlFor="password">
           Password
         </label>
         <div className="passwordInput">
-          <input className="inp inpPass" type="password" name="password" />
+          <input className="inp inpPass" type="password" name="password" onChange={(e)=>{setPassword(e.target.value)}} value={password} />
           <p
             className="revealPassword"
             onClick={(e) => {

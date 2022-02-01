@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react/cjs/react.development";
+import UserContext from "../../Contexts/UserContext";
 import "./NavComponent.css";
 import logo from "./static/Exclusion 1.png";
 const NavComponent = () => {
+const {token, setUserToken}= useContext(UserContext);
+  const logoutClick=()=>{
+setUserToken(null);
+sessionStorage.clear();
+  }
   return (
     <div id="nav-container">
       <img className="logoImage" src={logo} alt="logo" />
@@ -18,7 +25,7 @@ const NavComponent = () => {
             </Link>
           </li>
           <li>
-            <Link to="/logout" className="liItemLogout">
+            <Link onClick={logoutClick} className="liItemLogout">
               logout
             </Link>
           </li>
