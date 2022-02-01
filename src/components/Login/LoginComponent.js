@@ -7,30 +7,43 @@ import { useContext } from "react/cjs/react.development";
 import UserContext from "../../Contexts/UserContext";
 import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 const LoginComponent = () => {
-  const [username, setUsername]= useState("");
-  const [password, setPassword]= useState("");
-  const {token, setUserToken}= useContext(UserContext);
-  
-useEffect(()=>{console.log(token)}, [token])
-
-  const loginSubmit= async (e)=>{
-e.preventDefault();
-try{
-  const config = {
-    headers: {
-      "Content-Type": "application/json"
-    }
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const { token, setUserToken } = useContext(UserContext);
+  if (sessionStorage.getItem("session-token")) {
+    setUserToken(sessionStorage.getItem("session-token").toString());
   }
+  useEffect(() => {
+    console.log(token);
+  }, [token]);
 
- const tokenResponse= await axios.post('https://books-library-dev.herokuapp.com/api/user/login', {username, password}, config).catch((error)=>{console.log(error)}) 
- sessionStorage.setItem("session-token", tokenResponse.data.token);
- setUserToken(sessionStorage.getItem("session-token").toString());
+  const loginSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
 
-
-
-}catch(error){console.log(error)};
+      const tokenResponse = await axios
+        .post(
+          "https://books-library-dev.herokuapp.com/api/user/login",
+          { username, password },
+          config
+        )
+        .catch((error) => {
+          console.log(error);
+        });
+      sessionStorage.setItem("session-token", tokenResponse.data.token);
+      setUserToken(sessionStorage.getItem("session-token").toString());
+    } catch (error) {
+      console.log(error);
+    }
   };
-  if(token){return <Redirect to='/catalog'/>}
+  if (token) {
+    return <Redirect to="/catalog" />;
+  }
   return (
     <div className="loginDiv">
       <form id="LoginForm" onSubmit={loginSubmit}>
@@ -40,16 +53,29 @@ try{
           Email
         </label>
         <div className="emailInput">
-          <input className="inp inpEmail" type="text" name="email" onChange={(e)=>{
-   setUsername(e.target.value);
-
-          }} value={username}></input>
+          <input
+            className="inp inpEmail"
+            type="text"
+            name="email"
+            onChange={(e) => {
+              setUsername(e.target.value);
+            }}
+            value={username}
+          ></input>
         </div>
         <label className="labelPassword" htmlFor="password">
           Password
         </label>
         <div className="passwordInput">
-          <input className="inp inpPass" type="password" name="password" onChange={(e)=>{setPassword(e.target.value)}} value={password} />
+          <input
+            className="inp inpPass"
+            type="password"
+            name="password"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+            value={password}
+          />
           <p
             className="revealPassword"
             onClick={(e) => {

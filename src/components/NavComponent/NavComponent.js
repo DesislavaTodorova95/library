@@ -1,13 +1,13 @@
-import { Link } from "react-router-dom";
-import { useContext } from "react/cjs/react.development";
+import { Link, Redirect } from "react-router-dom";
+import { useContext, useEffect } from "react/cjs/react.development";
 import UserContext from "../../Contexts/UserContext";
 import "./NavComponent.css";
 import logo from "./static/Exclusion 1.png";
 const NavComponent = () => {
-const {token, setUserToken}= useContext(UserContext);
-  const logoutClick=()=>{
-setUserToken(null);
-sessionStorage.clear();
+  const { token } = useContext(UserContext);
+
+  if (!token) {
+    return <Redirect to="/login" />;
   }
   return (
     <div id="nav-container">
@@ -25,7 +25,7 @@ sessionStorage.clear();
             </Link>
           </li>
           <li>
-            <Link onClick={logoutClick} className="liItemLogout">
+            <Link to="/logout" className="liItemLogout">
               logout
             </Link>
           </li>

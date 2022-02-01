@@ -7,14 +7,14 @@ import { useContext } from "react";
 import UserContext from "../../Contexts/UserContext";
 import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 const CatalogComponent = () => {
+  const { token, setUserToken } = useContext(UserContext);
+  if (token) {
+    console.log(token);
+  }
+  if (!token) {
+    return <Redirect to="/login" />;
+  }
 
-  const {token, setUserToken}= useContext(UserContext);
-if(token){console.log(token)}
-  if(!token){
-    return <Redirect to="/login"/>
-    
-  } 
-  
   return (
     <>
       <NavComponent />
