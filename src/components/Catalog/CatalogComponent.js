@@ -7,7 +7,7 @@ import { useContext } from "react";
 import UserContext from "../../Contexts/UserContext";
 import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 const CatalogComponent = () => {
-  const { token, setUserToken } = useContext(UserContext);
+  const { token,  } = useContext(UserContext);
   if (token) {
     console.log(token);
   }

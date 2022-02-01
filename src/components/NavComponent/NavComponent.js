@@ -1,5 +1,5 @@
 import { Link, Redirect } from "react-router-dom";
-import { useContext, useEffect } from "react/cjs/react.development";
+import { useContext } from "react/cjs/react.development";
 import UserContext from "../../Contexts/UserContext";
 import "./NavComponent.css";
 import logo from "./static/Exclusion 1.png";

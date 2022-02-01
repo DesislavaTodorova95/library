@@ -1,22 +1,26 @@
 import "./LoginComponent.css";
 
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import axios from "axios";
-import { useContext } from "react/cjs/react.development";
+import { useContext, useEffect } from "react/cjs/react.development";
 import UserContext from "../../Contexts/UserContext";
 import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 const LoginComponent = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const { token, setUserToken } = useContext(UserContext);
+  const [isVisible, setIsVisible]= useState(false);
+  const [error, setError] = useState(null);
   if (sessionStorage.getItem("session-token")) {
     setUserToken(sessionStorage.getItem("session-token").toString());
   }
-  useEffect(() => {
-    console.log(token);
-  }, [token]);
 
+  useEffect(()=>{
+setTimeout(()=>{
+  setError(null);
+}, 5000)
+  }, [error])
   const loginSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -31,14 +35,16 @@ const LoginComponent = () => {
           "https://books-library-dev.herokuapp.com/api/user/login",
           { username, password },
           config
-        )
-        .catch((error) => {
-          console.log(error);
+        ).catch((error) => {
+          console.log(error.response.data.error);
+          setError(error.response.data.error);
+       
         });
       sessionStorage.setItem("session-token", tokenResponse.data.token);
       setUserToken(sessionStorage.getItem("session-token").toString());
     } catch (error) {
       console.log(error);
+     
     }
   };
   if (token) {
@@ -49,6 +55,7 @@ const LoginComponent = () => {
       <form id="LoginForm" onSubmit={loginSubmit}>
         <div className="logoImgDiv"></div>
         <h3 className="headWellcome">Welcome Back!</h3>
+      
         <label className="labelEmail" htmlFor="email">
           Email
         </label>
@@ -68,11 +75,13 @@ const LoginComponent = () => {
         </label>
         <div className="passwordInput">
           <input
-            className="inp inpPass"
-            type="password"
+            className={isVisible ? 'inp inpPass visibleIcon' : 'inp inpPass hidden'}
+            type={isVisible ? 'text': 'password'}
             name="password"
             onChange={(e) => {
               setPassword(e.target.value);
+        
+              
             }}
             value={password}
           />
@@ -80,7 +89,9 @@ const LoginComponent = () => {
             className="revealPassword"
             onClick={(e) => {
               e.preventDefault();
-              console.log("hhohoh");
+              if(isVisible){
+                setIsVisible(false);
+              }else{setIsVisible(true);}
             }}
           >
             Recover Password
@@ -96,6 +107,7 @@ const LoginComponent = () => {
             Sign up here
           </Link>
         </div>
+        <div className={error ? 'showError errorDiv' : 'hiddeErrorDiv'}><p>{error}</p></div>
       </form>
       <div className="loginImageDiv" />
     </div>

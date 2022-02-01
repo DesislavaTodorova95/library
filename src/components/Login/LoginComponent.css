@@ -52,10 +52,7 @@
   color: #1076b5;
   text-transform: uppercase;
 }
-.visible {
-  position: absolute;
-  margin-top: 3px;
-}
+
 .labelEmail {
   position: absolute;
   top: 422px;
@@ -80,11 +77,43 @@
   color: #0d242e;
   opacity: 1;
 }
+.visibleIcon{
+background-image: url('./static/visible.png');
+background-position: right 5px center;
+  
+background-repeat: no-repeat;
 
-.inpPass {
+}
+.hidden{
   background-image: url("./static/view.png");
   background-position: right 5px center;
+  
   background-repeat: no-repeat;
+}
+
+.showError{
+  display: block;
+  
+  
+  height: auto;
+  width: 600px;
+  margin-left: 25px;
+  background-color: rgb(247, 52, 52);
+  border: 4px solid #2e353d26;
+  color: rgb(17, 8, 8);
+  font-size: 13px;
+  align-items: flex-start;
+border-radius: 5px;
+}
+.showError p{
+  display: inline-block;
+}
+.hideError{
+  display: none;
+}
+.inpPass {
+
+
   position: relative;
   top: 563px;
   left: 175px;

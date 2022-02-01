@@ -1,4 +1,4 @@
-import { BrowserRouter as Swich, Redirect, Route } from "react-router-dom";
+import { BrowserRouter as Swich, Route } from "react-router-dom";
 import LoginComponent from "./components/Login/LoginComponent";
 import "./App.css";
 import RegisterCoponent from "./components/Register/RegisterComponent";
