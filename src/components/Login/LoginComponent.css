@@ -77,43 +77,41 @@
   color: #0d242e;
   opacity: 1;
 }
-.visibleIcon{
-background-image: url('./static/visible.png');
-background-position: right 5px center;
-  
-background-repeat: no-repeat;
+.visibleIcon {
+  background-image: url("./static/visible.png");
+  background-position: right 5px center;
 
+  background-repeat: no-repeat;
 }
-.hidden{
+.hidden {
   background-image: url("./static/view.png");
   background-position: right 5px center;
-  
+
   background-repeat: no-repeat;
 }
 
-.showError{
-  display: block;
-  
-  
+.showError {
+  top: 300px;
+  left: 120px;
+  position: relative;
+  display: flex;
   height: auto;
   width: 600px;
   margin-left: 25px;
   background-color: rgb(247, 52, 52);
   border: 4px solid #2e353d26;
-  color: rgb(17, 8, 8);
-  font-size: 13px;
+  color: rgb(236, 229, 229);
+  font-size: 15px;
   align-items: flex-start;
-border-radius: 5px;
+  border-radius: 5px;
 }
-.showError p{
-  display: inline-block;
+.showError p {
+  display: flex;
 }
-.hideError{
+.hideError {
   display: none;
 }
 .inpPass {
-
-
   position: relative;
   top: 563px;
   left: 175px;
@@ -235,7 +233,7 @@ border-radius: 5px;
   background-image: url("./static/view.png");
 }
 @media only screen and (max-width: 500px) {
-  #loginDiv{
+  #loginDiv {
     background-color: aqua;
   }
 }

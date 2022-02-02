@@ -1,28 +1,46 @@
+import axios from "axios";
+import { useContext, useEffect, useState } from "react";
+import { Redirect } from "react-router-dom";
+import UserContext from "../../Contexts/UserContext";
 import NavComponent from "../NavComponent/NavComponent";
 import "./DetailsComponent.css";
-import bookPhoto from "./static/bookPhoto.png";
-const DetailsComponent = () => {
+
+const DetailsComponent = ({match}) => {
+const [currentBook, setCurrentBook]= useState('');
+const {token, }= useContext(UserContext);
+
+useEffect(()=>{
+axios.get(`https://books-library-dev.herokuapp.com/api/book/${match.params.id}`, {headers:{"Content-Type": "application/json", 
+"Authorization": `Bearer ${token}`}}).then(res=> setCurrentBook(res.data)).catch((error)=>{throw new Error(error)})
+}, [token, match.params.id]);
+
+console.log('current, ', currentBook)
+if(!token){
+  return <Redirect to='/login'/>
+}
+// const createdOn = currentBook.createOn.slice(0,10).split('-').join('.');
+// const lastUpdate = currentBook.lastUpdateOn.slice(0, 10).split('-').join('.');
   return (
     <>
       <NavComponent />
       <div id="detailsContainer">
-        <img className="coverPhoto" src={bookPhoto} alt="book cover"></img>
+        <img className="coverPhoto" src={currentBook.image} alt="book cover"></img>
 
         <div className="infoDiv">
           <div className="titleDiv">
             <span className="titleHead">
-              Harry Potter and the Goblet of Fire
+              {currentBook.name}
             </span>
           </div>
-          <h5 className="bookAuthorDet">Author</h5>
+          <h5 className="bookAuthorDet">{currentBook.author}</h5>
           <h5 className="bookGenreDetails">
-            Genre:<span className="spanDescribe">Fiction</span>
+            Genre:<span className="spanDescribe">{currentBook.genre.name}</span>
           </h5>
           <h5 className="createdOn">
-            Created on:<span className="spanDescribe">22.12.2021</span>
+            Created on:<span className="spanDescribe">{currentBook.createOn.slice(0, 10).split('-').join('.')}</span>
           </h5>
           <h5 className="updatedOn">
-            Updated on:<span className="spanDescribe">25.12.2021</span>
+            Updated on:<span className="spanDescribe">{currentBook.lastUpdateOn.slice(0, 10).split('-').join('.')}</span>
           </h5>
           <div className="description">
             <h4 className="descriptionHead">Short description</h4>

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { Link, Redirect } from "react-router-dom";
-import { useContext, useState } from "react/cjs/react.development";
+import { useContext, useEffect, useState } from "react/cjs/react.development";
 import UserContext from "../../Contexts/UserContext";
 import "./RegisterComponent.css";
 const RegisterCoponent = () => {
@@ -9,11 +9,17 @@ const RegisterCoponent = () => {
   const [password, setPassword] = useState("");
   const [repass, setRepass] = useState("");
   const [message, setMessage] = useState(null);
- const registerSubmit = async (e) => {
+  const [error, setError] = useState(null);
+  useEffect(() => {
+    setTimeout(() => {
+      setError(null);
+    }, 5000);
+  }, [error]);
+  const registerSubmit = async (e) => {
     e.preventDefault();
     try {
       if (password !== repass) {
-        throw new Error("Passwords don't match!");
+        setError("Passwords don't match!");
       }
       const config = {
         headers: {
@@ -27,16 +33,18 @@ const RegisterCoponent = () => {
           config
         )
         .catch((error) => {
-          console.log(error);
+          setError(error.response.data.error);
+          throw new Error(error.response.data.error);
         });
- console.log(responseMessage.data.message);
+      console.log(responseMessage.data.message);
       setMessage(responseMessage.data.message);
     } catch (error) {
+      console.log(error);
       throw new Error(error);
     }
   };
   if (token || message) {
-    return <Redirect to="/catalog" />;
+    return <Redirect to="/login" />;
   }
   return (
     <div className="registerDiv">
@@ -95,6 +103,9 @@ const RegisterCoponent = () => {
           <Link className="regLink" to="/login">
             Log in here
           </Link>
+        </div>
+        <div className={error ? "showError errorDiv" : "hiddeErrorDiv"}>
+          <p>{error}</p>
         </div>
       </form>
 
