@@ -41,7 +41,7 @@ const LoginComponent = () => {
         });
       if (tokenResponse) {
         sessionStorage.setItem("session-token", tokenResponse.data.token);
-        
+        setUserToken(sessionStorage.getItem("session-token"));
       }
     } catch (error) {
       throw new Error(error);
