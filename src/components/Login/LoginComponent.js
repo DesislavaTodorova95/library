@@ -12,9 +12,7 @@ const LoginComponent = () => {
   const { token, setUserToken } = useContext(UserContext);
   const [isVisible, setIsVisible] = useState(false);
   const [error, setError] = useState(null);
-  if (!token && sessionStorage.getItem("session-token")) {
-    setUserToken(sessionStorage.getItem("session-token").toString());
-  }
+  
 
   useEffect(() => {
     setTimeout(() => {
@@ -43,7 +41,7 @@ const LoginComponent = () => {
         });
       if (tokenResponse) {
         sessionStorage.setItem("session-token", tokenResponse.data.token);
-        setUserToken(sessionStorage.getItem("session-token").toString());
+        
       }
     } catch (error) {
       throw new Error(error);

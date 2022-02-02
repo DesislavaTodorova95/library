@@ -8,7 +8,8 @@ import DetailsComponent from "./components/Details/DetailsComponent";
 import { useState } from "react";
 import UserContext from "./Contexts/UserContext";
 function App() {
-  const [token, setUserToken] = useState(null);
+  const [token, setUserToken] = useState(sessionStorage.getItem("session-token"));
+ 
   return (
     <div id="root">
       <UserContext.Provider value={{ token, setUserToken }}>
