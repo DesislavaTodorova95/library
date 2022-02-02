@@ -12,6 +12,33 @@ import Book from "../BookComponent/Book";
 const CatalogComponent = () => {
   const { token } = useContext(UserContext);
   const [books, setBooks] = useState([]);
+  const [searchTerm, setTerm] = useState("");
+
+  const searchByName = async (e) => {
+    e.preventDefault();
+    if (token && searchTerm) {
+      try {
+         axios
+          .post('https://books-library-dev.herokuapp.com/api/book/search',{ "pattern": `${searchTerm}` }, {
+            headers: {
+              "Content-Type": "application/json",
+              "Authorization": `Bearer ${token}`,
+            }, 
+           
+          }
+         )
+          .then(res => {console.log(res);
+            setBooks(res.data)})
+          .catch((error) => {
+            throw new Error(error);
+          });
+          setTerm('')
+        
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  };
 
   useEffect(() => {
     if (token) {
@@ -38,13 +65,13 @@ const CatalogComponent = () => {
       <NavComponent />
       <div id="catalogDiv">
         <p className="headCatalog">All books</p>
-        <form id="searchBar">
+        <form onSubmit={searchByName} id="searchBar">
           <input
-            type="search"
+            type="text"
             placeholder="Search"
             id="site-search"
-            name="q"
-            aria-label="Search"
+            onChange={(e) => setTerm(e.target.value)}
+            value={searchTerm}
           ></input>
           <button type="submit" id="searhButton" form="searchBar"></button>
           <div id="books">

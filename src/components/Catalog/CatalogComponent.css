@@ -59,5 +59,16 @@
   display: block;
   margin: 8px;
 }
+#catalogDiv{
+overflow-y:scroll;
+scroll-behavior: smooth;
+scrollbar-color: #0d242e;
+scrollbar-width: 7px;
+
+
+}
+::-webkit-scrollbar {
+  width: 0px;
+}
 
 /*book*/
