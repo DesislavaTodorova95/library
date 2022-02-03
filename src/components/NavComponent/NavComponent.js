@@ -19,12 +19,12 @@ const currentPath = useHistory().location.pathname.toLowerCase()
       <nav className="navList">
         <ul className="uLNav">
           <li className={currentPath.includes('catalog') ? "navl": ''}>
-            <Link to="/catalog" className='liItemLib'>
+            <Link to="/catalog" className={currentPath.includes('catalog') ? "boldText": ''}>
               Library
             </Link>
           </li>
           <li className={currentPath.includes('settings') ? "navl": ''}>
-            <Link to="/settings" className='liItemSettings'>
+            <Link to="/settings" className={currentPath.includes('settings') ? "boldText": ''}>
               settings
             </Link>
           </li>
