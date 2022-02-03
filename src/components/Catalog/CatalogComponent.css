@@ -52,15 +52,18 @@
   padding-right: 20%;
 }
 #searhButton {
+  cursor: pointer;
   border: none;
   top: 128px;
   left: 682px;
-  width: 22px;
-  height: 22px;
+  width: 30px;
+  height: 40px;
   background: transparent url("/src/components/Catalog/static/Path\ 30139.png")
     0% 0% no-repeat padding-box;
+    background-position: center;
   opacity: 1;
-  margin-left: -1.4%;
+  margin-left: -1.5%;
+  position: inline;
 }
 #books {
   display: block;

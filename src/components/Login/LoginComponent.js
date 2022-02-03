@@ -51,7 +51,7 @@ const LoginComponent = () => {
       <div className="loginDiv">
         <form id="LoginForm" onSubmit={loginSubmit}>
           <div className="logoImgDiv"></div>
-          <h3 className="headWellcome">Welcome Back!</h3>
+          <h3 className="headWellcomeLogin">Welcome Back!</h3>
           <label className="labelEmail" htmlFor="email">
             Email
           </label>

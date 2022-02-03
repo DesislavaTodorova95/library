@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;1,100&display=swap");
 .bookContainer {
   width: 870px;
   height: 177px;
@@ -52,8 +53,11 @@
   font-size: 16px;
   height: 19px;
 }
+
 .semibold {
-  font-family: "Montserrat-SemiBold", url("/src/fonts/Montserrat-SemiBold.ttf");
+  font-family: "Montserrat-SemiBold";
+  font-size: 16px;
+  font-weight: bold;
 }
 .bookImage {
   display: block;
@@ -71,9 +75,9 @@
   height: 177px;
 }
 .bookTitle {
-  font-family: "Montserrat";
+  font-family: "Montserrat-Bold";
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
   letter-spacing: 0px;
   text-transform: uppercase;
 }

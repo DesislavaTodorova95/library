@@ -68,8 +68,6 @@ const [getAllBooks, setGetAllBooks] = useState(false)
           <input
           form="searchBar"
             type="text"
-           
-           
             placeholder="Search"
             id="site-search"
             onChange={(e) => setTerm(e.target.value)}

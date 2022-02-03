@@ -27,10 +27,10 @@ const Book = ({ _id, name, author, image, createOn, lastUpdateOn, genre }) => {
         </h5>
         <div className="AddedUpdatedInfo">
           <h5 className="info created">
-            created on:<span>{createOn}</span>
+            Created on: <span className="semibold">{createOn}</span>
           </h5>
           <h5 className="info updated">
-            updated on:<span>{lastUpdateOn}</span>
+            Updated on: <span className="semibold">{lastUpdateOn}</span>
           </h5>
         </div>
       </div>
