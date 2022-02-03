@@ -9,39 +9,38 @@
   box-shadow: 0px 3px 6px #00000029;
   opacity: 1;
 }
-.backToLibrary{
-  position: absolute;
+.backToLibrary {
   top: 22px;
   left: 81px;
   width: 63px;
   height: 22px;
-  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-18)/var(--unnamed-line-spacing-26) var(--unnamed-font-family-montserrat);
-  letter-spacing: var(--unnamed-character-spacing-0);
-  color: var(--unnamed-color-0d242e);
+position: absolute;
   text-align: left;
   font: normal normal normal 18px/26px Montserrat;
   letter-spacing: 0px;
-  color: #0D242E;
-  opacity: 1;}
-.backBtn{
-  position: absolute;
-  background: transparent url('/src/components/NavComponent/static/Polygon\ 39.png') 0% 0% no-repeat padding-box;
-opacity: 1;
-  top: 22px;
-left: 49px;
-width: 14px;
-height: 22px;
-transform: matrix( -1, 1, 0, 0, 0);
-
+  color: #0d242e;
+  opacity: 1;
 }
-.profileImage{
+.backBtn {
+  position: absolute;
+  background: transparent
+    url("/src/components/NavComponent/static/Polygon\ 39.png") 0% 0% no-repeat
+    padding-box;
+  opacity: 1;
+  top: 22px;
+  left: 49px;
+  width: 14px;
+  height: 22px;
+  transform: matrix(-1, 1, 0, 0, 0);
+}
+.profileImage {
   position: absolute;
   background: 0% 0% no-repeat padding-box;
-opacity: 1;
+  opacity: 1;
   top: 15px;
-left: 1837px;
-width: 33px;
-height: 33px;
+  left: 1837px;
+  width: 33px;
+  height: 33px;
 }
 .logoImage {
   position: absolute;
@@ -76,8 +75,6 @@ height: 33px;
 .uLNav li a {
   text-decoration: none;
   text-align: left;
- 
-
 
   font-size: 16px;
   letter-spacing: 0px;
@@ -92,8 +89,8 @@ height: 33px;
 }
 .navl {
   border-bottom: 4px solid #08c642;
- font-weight: bold;
+  font-weight: bold;
 }
-.boldText{
- font-weight: bold;
+.boldText {
+  font-weight: bold;
 }

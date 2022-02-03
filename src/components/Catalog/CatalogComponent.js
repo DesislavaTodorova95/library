@@ -1,8 +1,5 @@
 import "./CatalogComponent.css";
 import NavComponent from "../NavComponent/NavComponent";
-import Maskbook from "./static/Maskbook.png";
-import bookCov from "./static/bookCov.png";
-import { Link } from "react-router-dom";
 import UserContext from "../../Contexts/UserContext";
 import { Redirect } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
@@ -13,11 +10,12 @@ const CatalogComponent = () => {
   const { token } = useContext(UserContext);
   const [books, setBooks] = useState([]);
   const [searchTerm, setTerm] = useState("");
-
+const [getAllBooks, setGetAllBooks] = useState(false)
   const searchByName = async (e) => {
     e.preventDefault();
-    if (token && searchTerm) {
+    if (token && searchTerm!== '') {
       try {
+      
          axios
           .post('https://books-library-dev.herokuapp.com/api/book/search',{ "pattern": `${searchTerm}` }, {
             headers: {
@@ -53,8 +51,9 @@ const CatalogComponent = () => {
         .catch((error) => {
           console.log(error);
         });
+        setGetAllBooks(false)
     }
-  }, [token]);
+  }, [token, getAllBooks]);
 
   if (!token) {
     return <Redirect to="/login" />;
@@ -64,10 +63,13 @@ const CatalogComponent = () => {
     <>
       <NavComponent />
       <div id="catalogDiv">
-        <p className="headCatalog">All books</p>
+        <p className="headCatalog" onClick={(e)=>{e.preventDefault(); setGetAllBooks(true)}}>All books</p>
         <form onSubmit={searchByName} id="searchBar">
           <input
+          form="searchBar"
             type="text"
+           
+           
             placeholder="Search"
             id="site-search"
             onChange={(e) => setTerm(e.target.value)}
@@ -75,7 +77,12 @@ const CatalogComponent = () => {
           ></input>
           <button type="submit" id="searhButton" form="searchBar"></button>
           <div id="books">
-            {books
+            {
+           (books.length<1) ? 
+             <p className={'no-books'}>There are no books Found...</p>
+             
+            :
+              books
               .sort((a, b) => a.name.localeCompare(b.name))
               .map((book) => (
                 <Book key={book._id} {...book} />

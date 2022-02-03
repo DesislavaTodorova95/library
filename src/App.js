@@ -20,6 +20,7 @@ function App() {
           <Route path="/catalog" exact component={CatalogComponent} />
           <Route path="/settings" exact component={SettingsComponent} />
           <Route path="/details/:id" exact component={DetailsComponent} />
+
           <Route
             path="/logout"
             exact
