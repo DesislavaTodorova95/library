@@ -58,7 +58,7 @@ const RegisterCoponent = () => {
         </label>
         <div className="emailInput">
           <input
-            className="inp inpEmailReg"
+            className="inpRe inpEmailReg"
             type="text"
             value={username}
             onChange={(e) => {
@@ -72,7 +72,7 @@ const RegisterCoponent = () => {
         </label>
         <div className="passwordInput">
           <input
-            className="inp inpPassReg"
+            className="inpRe inpPassReg"
             type="password"
             value={password}
             onChange={(e) => {
@@ -86,7 +86,7 @@ const RegisterCoponent = () => {
         </label>
         <div className="rePasswordInput">
           <input
-            className="inp inpRePass"
+            className="inpRe inpRePass"
             type="password"
             onChange={(e) => {
               setRepass(e.target.value);
@@ -99,8 +99,8 @@ const RegisterCoponent = () => {
           <p className="regButnParagraph">Sign Up</p>
         </button>
         <div className="redirectToLoginDiv">
-          <p className="linkToRegister">You dont have an account?</p>
-          <Link className="regLink" to="/login">
+          <p className="linkToLogin">You dont have an account?</p>
+          <Link className="logLink" to="/login">
             Log in here
           </Link>
         </div>
@@ -109,7 +109,7 @@ const RegisterCoponent = () => {
         </div>
       </form>
 
-      <div className="loginImageDiv" />
+      <div className="regImageDiv" />
     </div>
   );
 };

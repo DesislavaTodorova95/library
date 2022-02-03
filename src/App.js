@@ -13,6 +13,7 @@ function App() {
   );
   return (
     <div id="root">
+      <div className="hiddenForDesktop"></div>
       <UserContext.Provider value={{ token, setUserToken }}>
         <Swich>
           <Route path="/" exact component={CatalogComponent} />

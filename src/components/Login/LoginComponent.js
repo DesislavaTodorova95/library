@@ -47,7 +47,8 @@ const LoginComponent = () => {
   if (token) {
     return <Redirect to="/catalog" />;
   } else {
-    return (
+    return (<>
+      <div className="logoImgDivHid"></div>
       <div className="loginDiv">
         <form id="LoginForm" onSubmit={loginSubmit}>
           <div className="logoImgDiv"></div>
@@ -109,7 +110,7 @@ const LoginComponent = () => {
           </div>
         </form>
         <div className="loginImageDiv" />
-      </div>
+      </div></>
     );
   }
 };
