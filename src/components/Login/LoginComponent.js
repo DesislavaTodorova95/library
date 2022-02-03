@@ -47,70 +47,72 @@ const LoginComponent = () => {
   if (token) {
     return <Redirect to="/catalog" />;
   } else {
-    return (<>
-      <div className="logoImgDivHid"></div>
-      <div className="loginDiv">
-        <form id="LoginForm" onSubmit={loginSubmit}>
-          <div className="logoImgDiv"></div>
-          <h3 className="headWellcomeLogin">Welcome Back!</h3>
-          <label className="labelEmail" htmlFor="email">
-            Email
-          </label>
-          <div className="emailInput">
-            <input
-              className="inp inpEmail"
-              type="text"
-              name="email"
-              onChange={(e) => {
-                setUsername(e.target.value);
-              }}
-              value={username}
-            ></input>
-          </div>
-          <label className="labelPassword" htmlFor="password">
-            Password
-          </label>
-          <div className="passwordInput">
-            <input
-              className={
-                isVisible ? "inp inpPass visibleIcon" : "inp inpPass hidden"
-              }
-              type={isVisible ? "text" : "password"}
-              name="password"
-              onChange={(e) => {
-                setPassword(e.target.value);
-              }}
-              value={password}
-            />
-            <p
-              className="revealPassword"
-              onClick={(e) => {
-                e.preventDefault();
-                if (isVisible) {
-                  setIsVisible(false);
-                } else {
-                  setIsVisible(true);
+    return (
+      <>
+        <div className="logoImgDivHid"></div>
+        <div className="loginDiv">
+          <form id="LoginForm" onSubmit={loginSubmit}>
+            <div className="logoImgDiv"></div>
+            <h3 className="headWellcomeLogin">Welcome Back!</h3>
+            <label className="labelEmail" htmlFor="email">
+              Email
+            </label>
+            <div className="emailInput">
+              <input
+                className="inp inpEmail"
+                type="text"
+                name="email"
+                onChange={(e) => {
+                  setUsername(e.target.value);
+                }}
+                value={username}
+              ></input>
+            </div>
+            <label className="labelPassword" htmlFor="password">
+              Password
+            </label>
+            <div className="passwordInput">
+              <input
+                className={
+                  isVisible ? "inp inpPass visibleIcon" : "inp inpPass hidden"
                 }
-              }}
-            >
-              Recover Password
-            </p>
-          </div>
-          <button type="submit" form="LoginForm" className="loginBtn">
-            <p className="logButnParagraph">log in</p>
-          </button>
-          <div className="redirectDiv">
-            <p className="linkToRegister">You dont have an account?</p>
-            <Link className="regLink" to="/register">
-            Sign up here
-            </Link>
-          </div>
-          <div className={error ? "showError errorDiv" : "hiddeErrorDiv"}>
-            <p>{error}</p>
-          </div>
-        </form>
-        <div className="loginImageDiv" />
-      </div></>
+                type={isVisible ? "text" : "password"}
+                name="password"
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
+                value={password}
+              />
+              <p
+                className="revealPassword"
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (isVisible) {
+                    setIsVisible(false);
+                  } else {
+                    setIsVisible(true);
+                  }
+                }}
+              >
+                Recover Password
+              </p>
+            </div>
+            <button type="submit" form="LoginForm" className="loginBtn">
+              <p className="logButnParagraph">log in</p>
+            </button>
+            <div className="redirectDiv">
+              <p className="linkToRegister">You dont have an account?</p>
+              <Link className="regLink" to="/register">
+                Sign up here
+              </Link>
+            </div>
+            <div className={error ? "showError errorDiv" : "hiddeErrorDiv"}>
+              <p>{error}</p>
+            </div>
+          </form>
+          <div className="loginImageDiv" />
+        </div>
+      </>
     );
   }
 };

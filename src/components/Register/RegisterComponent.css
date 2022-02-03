@@ -14,7 +14,6 @@
   position: absolute;
   display: inline-block;
 }
-
 .visible {
   position: absolute;
   margin-top: 3px;
@@ -32,12 +31,34 @@
   opacity: 1;
 }
 .logLink {
+  display: inline-block;
+  position: absolute;
+  top: 0px;
+  left: 225px;
+  width: 120px;
+  height: 19px;
+  text-align: left;
+  text-decoration: underline;
+  font-weight: bold;
+  letter-spacing: 0px;
+  color: #1076b5;
+  text-transform: uppercase;
   font-family: "Montserrat-Bold";
   font-size: 16px;
 }
 .linkToLogin {
   font-family: "Montserrat-SemiBold";
   font-size: 16px;
+  margin: 0;
+  display: inline-block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 225px;
+  height: 19px;
+  text-align: right;
+  letter-spacing: 0px;
+  color: #0d242e;
 }
 .labelPasswordReg {
   position: absolute;
@@ -146,7 +167,6 @@
   height: 22px;
   text-align: center;
   font-family: "Montserrat-SemiBold";
-
   font-size: 18px;
   letter-spacing: 0px;
   color: #0d242e;
@@ -191,6 +211,12 @@
   opacity: 1;
 }
 .redirectToLoginDiv {
+  display: block;
+  height: 19px;
+  text-align: center;
+  letter-spacing: 0px;
+  word-spacing: 0px;
+  opacity: 1;
   position: absolute;
   top: 926px;
   left: 281px;
@@ -199,6 +225,5 @@
 }
 @media only screen and (max-width: 500px) {
   #registerDiv {
-    background-color: aqua;
   }
 }

@@ -1,15 +1,6 @@
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import "./Book.css";
 
-/*"_id": "618a75abefb465359670fd1c",
-        "name": "Devolution",
-        "author": "Max Brooks",
-        "image": "https://dev-fidweb.s3.eu-central-1.amazonaws.com/tasks/books/Devolution.jpeg",
-        "createOn": "2021-10-09T21:00:00.000Z",
-        "lastUpdateOn": "2021-10-09T21:00:00.000Z",
-        "genre": {
-            "_id": "618a7602efb465359670fd21",
-            "name": "Horror" */
 const Book = ({ _id, name, author, image, createOn, lastUpdateOn, genre }) => {
   createOn = createOn.slice(0, 10).split("-").join(".");
   lastUpdateOn = lastUpdateOn.slice(0, 10).split("-").join(".");

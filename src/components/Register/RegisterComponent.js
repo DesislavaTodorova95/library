@@ -52,8 +52,7 @@ const RegisterCoponent = () => {
         <div className="logoImgDivReg"></div>
         <p className="headWellcome">Welcome Back to the best book database!</p>
         <p className="headCreateProfile">Create your profile</p>
-
-        <label className="labelEmailReg" htmlFor="email">
+<label className="labelEmailReg" htmlFor="email">
           Email
         </label>
         <div className="emailInput">
@@ -99,7 +98,7 @@ const RegisterCoponent = () => {
           <p className="regButnParagraph">Sign Up</p>
         </button>
         <div className="redirectToLoginDiv">
-          <p className="linkToLogin">You dont have an account?</p>
+          <p className="linkToLogin">You have an account?</p>
           <Link className="logLink" to="/login">
             Log in here
           </Link>
@@ -108,8 +107,7 @@ const RegisterCoponent = () => {
           <p>{error}</p>
         </div>
       </form>
-
-      <div className="regImageDiv" />
+<div className="regImageDiv" />
     </div>
   );
 };

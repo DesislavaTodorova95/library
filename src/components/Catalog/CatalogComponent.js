@@ -10,34 +10,35 @@ const CatalogComponent = () => {
   const { token } = useContext(UserContext);
   const [books, setBooks] = useState([]);
   const [searchTerm, setTerm] = useState("");
-const [getAllBooks, setGetAllBooks] = useState(false)
+  const [getAllBooks, setGetAllBooks] = useState(false);
   const searchByName = async (e) => {
     e.preventDefault();
-    if (token && searchTerm!== '') {
+    if (token && searchTerm !== "") {
       try {
-      
-         axios
-          .post('https://books-library-dev.herokuapp.com/api/book/search',{ "pattern": `${searchTerm}` }, {
-            headers: {
-              "Content-Type": "application/json",
-              "Authorization": `Bearer ${token}`,
-            }, 
-           
-          }
-         )
-          .then(res => {console.log(res);
-            setBooks(res.data)})
+        axios
+          .post(
+            "https://books-library-dev.herokuapp.com/api/book/search",
+            { pattern: `${searchTerm}` },
+            {
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          )
+          .then((res) => {
+            console.log(res);
+            setBooks(res.data);
+          })
           .catch((error) => {
             throw new Error(error);
           });
-          setTerm('')
-        
+        setTerm("");
       } catch (error) {
         console.log(error);
       }
     }
   };
-
   useEffect(() => {
     if (token) {
       axios
@@ -51,22 +52,29 @@ const [getAllBooks, setGetAllBooks] = useState(false)
         .catch((error) => {
           console.log(error);
         });
-        setGetAllBooks(false)
+      setGetAllBooks(false);
     }
   }, [token, getAllBooks]);
 
   if (!token) {
     return <Redirect to="/login" />;
   }
-
   return (
     <>
       <NavComponent />
       <div id="catalogDiv">
-        <p className="headCatalog" onClick={(e)=>{e.preventDefault(); setGetAllBooks(true)}}>All books</p>
+        <p
+          className="headCatalog"
+          onClick={(e) => {
+            e.preventDefault();
+            setGetAllBooks(true);
+          }}
+        >
+          All books
+        </p>
         <form onSubmit={searchByName} id="searchBar">
           <input
-          form="searchBar"
+            form="searchBar"
             type="text"
             placeholder="Search"
             id="site-search"
@@ -75,16 +83,13 @@ const [getAllBooks, setGetAllBooks] = useState(false)
           ></input>
           <button type="submit" id="searhButton" form="searchBar"></button>
           <div id="books">
-            {
-           (books.length<1) ? 
-             <p className={'no-books'}>There are no books Found...</p>
-             
-            :
+            {books.length < 1 ? (
+              <p className={"no-books"}>There are no books Found...</p>
+            ) : (
               books
-              .sort((a, b) => a.name.localeCompare(b.name))
-              .map((book) => (
-                <Book key={book._id} {...book} />
-              ))}
+                .sort((a, b) => a.name.localeCompare(b.name))
+                .map((book) => <Book key={book._id} {...book} />)
+            )}
           </div>
         </form>
       </div>

@@ -31,33 +31,34 @@ body {
   left: 0px;
   width: 1920px;
   height: 1080px;
-  
 }
-.hiddenForDesktop{display: none;}
+.hiddenForDesktop {
+  display: none;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-@media only screen and (max-width: 420px)  {
-
-  body{ background-image: url('/public/Group\ 19445@2x.png');
-   
-    
-    
-  box-shadow: none;
-  top: 0px;
-  left: 0px;
-  width: 414px;
-  height: 896px;}
-  .hiddenForDesktop{
+@media only screen and (max-width: 420px) {
+  body {
+    background-image: url("/public/Group\ 19445@2x.png");
+    box-shadow: none;
+    top: 0px;
+    left: 0px;
+    width: 414px;
+    height: 896px;
+  }
+  .hiddenForDesktop {
     display: block;
     position: absolute;
     top: 44px;
-  left: 116px;
-  width: 182px;
-  height: 39px;
-  background: transparent url("/public/Exclusion\ 1.png");background-repeat: no-repeat; background-position:center; background-size: 182px, 39px;
-  opacity: 1;
+    left: 116px;
+    width: 182px;
+    height: 39px;
+    background: transparent url("/public/Exclusion\ 1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 182px, 39px;
+    opacity: 1;
   }
 }
-
