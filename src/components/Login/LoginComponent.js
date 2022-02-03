@@ -102,7 +102,7 @@ const LoginComponent = () => {
           <div className="redirectDiv">
             <p className="linkToRegister">You dont have an account?</p>
             <Link className="regLink" to="/register">
-              Sign up here
+            Sign up here
             </Link>
           </div>
           <div className={error ? "showError errorDiv" : "hiddeErrorDiv"}>
