@@ -8,8 +8,9 @@ import DetailsComponent from "./components/Details/DetailsComponent";
 import { useState } from "react";
 import UserContext from "./Contexts/UserContext";
 function App() {
-  const [token, setUserToken] = useState(sessionStorage.getItem("session-token"));
- 
+  const [token, setUserToken] = useState(
+    sessionStorage.getItem("session-token")
+  );
   return (
     <div id="root">
       <UserContext.Provider value={{ token, setUserToken }}>
@@ -20,7 +21,6 @@ function App() {
           <Route path="/catalog" exact component={CatalogComponent} />
           <Route path="/settings" exact component={SettingsComponent} />
           <Route path="/details/:id" exact component={DetailsComponent} />
-
           <Route
             path="/logout"
             exact

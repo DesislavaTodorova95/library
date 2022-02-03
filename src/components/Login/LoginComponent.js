@@ -1,5 +1,4 @@
 import "./LoginComponent.css";
-
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
@@ -12,7 +11,6 @@ const LoginComponent = () => {
   const { token, setUserToken } = useContext(UserContext);
   const [isVisible, setIsVisible] = useState(false);
   const [error, setError] = useState(null);
-  
 
   useEffect(() => {
     setTimeout(() => {
@@ -27,7 +25,6 @@ const LoginComponent = () => {
           "Content-Type": "application/json",
         },
       };
-
       const tokenResponse = await axios
         .post(
           "https://books-library-dev.herokuapp.com/api/user/login",
@@ -55,7 +52,6 @@ const LoginComponent = () => {
         <form id="LoginForm" onSubmit={loginSubmit}>
           <div className="logoImgDiv"></div>
           <h3 className="headWellcome">Welcome Back!</h3>
-
           <label className="labelEmail" htmlFor="email">
             Email
           </label>
@@ -99,7 +95,6 @@ const LoginComponent = () => {
               Recover Password
             </p>
           </div>
-
           <button type="submit" form="LoginForm" className="loginBtn">
             <p className="logButnParagraph">log in</p>
           </button>

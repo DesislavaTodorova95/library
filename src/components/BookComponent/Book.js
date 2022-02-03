@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
-import './Book.css'
+import "./Book.css";
 
 /*"_id": "618a75abefb465359670fd1c",
         "name": "Devolution",
@@ -10,31 +10,36 @@ import './Book.css'
         "genre": {
             "_id": "618a7602efb465359670fd21",
             "name": "Horror" */
-const Book = ({_id, name, author, image, createOn, lastUpdateOn, genre})=>{
- createOn = createOn.slice(0, 10).split('-').join('.');
- lastUpdateOn = lastUpdateOn.slice(0, 10).split('-').join('.')
-    
-return (
-    <div className="bookContainer">
-    <div className="imageSection">
-      <img className="bookImage" src={image} alt="bookcover"></img>
-    </div>
+const Book = ({ _id, name, author, image, createOn, lastUpdateOn, genre }) => {
+  createOn = createOn.slice(0, 10).split("-").join(".");
+  lastUpdateOn = lastUpdateOn.slice(0, 10).split("-").join(".");
 
-    <div className="bookInfoSection">
-      <h4 className="info bookTitle">{name}</h4>
-      <h5 className="info bookAuthor">{author}</h5>
-      <h5 className="info bookGenre">Genre: <span className='semibold'>{genre.name}</span></h5>
-      <div className="AddedUpdatedInfo">
-        <h5 className="info created">created on:<span>{createOn}</span></h5>
-        <h5 className="info updated">updated on:<span>{lastUpdateOn}</span></h5>
+  return (
+    <div className="bookContainer">
+      <div className="imageSection">
+        <img className="bookImage" src={image} alt="bookcover"></img>
+      </div>
+      <div className="bookInfoSection">
+        <h4 className="info bookTitle">{name}</h4>
+        <h5 className="info bookAuthor">{author}</h5>
+        <h5 className="info bookGenre">
+          Genre: <span className="semibold">{genre.name}</span>
+        </h5>
+        <div className="AddedUpdatedInfo">
+          <h5 className="info created">
+            created on:<span>{createOn}</span>
+          </h5>
+          <h5 className="info updated">
+            updated on:<span>{lastUpdateOn}</span>
+          </h5>
+        </div>
+      </div>
+      <div className="btnDetailsDiv">
+        <Link className="detailsLink" to={`/details/${_id}`}>
+          <button className="detailsBtn"></button>
+        </Link>
       </div>
     </div>
-    <div className="btnDetailsDiv">
-      <Link className="detailsLink" to={`/details/${_id}`}>
-        <button className="detailsBtn"></button>
-      </Link>
-    </div>
-  </div>  
-)
-}
+  );
+};
 export default Book;
