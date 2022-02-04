@@ -397,4 +397,14 @@
   .loginImageDiv {
     display: none;
   }
+  .showError{
+    position: absolute;
+    top:0px;
+    width:360px;
+    height:auto;
+    margin-left:0px;
+   
+    left:0;
+    
+  }
 }
